@@ -1,0 +1,56 @@
+body{
+    background-color: rgba(96, 122, 209, 0.8);
+    background:linear-gradient(to right,#334596,#7e8291,#3e4f9c);
+    background:linear-gradient(to bottom,#8d96bd,#8993bb,#aeb3c4);
+      /*
+    background:linear-gradient(to right,#183bd9,rgb(80 80 195),#3051cd);
+    background-color:#586fc9;
+    background:linear-gradient(to right,#586fc9,#586fc9,#586fc9);
+    color:orange;
+    */
+}
+input::placeholder{
+    color:white;
+}
+.form{
+    margin-top:10px;
+   padding:1rem 2rem 1rem 2rem;
+   color:#ffffff;
+   font-weight:700;
+   font-size: medium;
+   letter-spacing: 2px;
+
+   /* background-color: rgba(12, 16, 34,0.8); */
+   /*background:linear-gradient(to right,rgb(98, 66, 189),rgb(226, 23, 135),blue);
+   background:linear-gradient(to right,#9ba0b6,rgb(48, 48, 161),#848897);
+   background:linear-gradient(to right,#183bd9,rgb(80 80 195),#3051cd);*/
+   /* background:linear-gradient(to right,#183bd9,#0c1022,#3051cd);
+   background:linear-gradient(to right,#1636c7,#2d3f8d,#534d4d); */
+   background:linear-gradient(to right,#1c3abe,#d3d5dd,#2b3c94);
+   background:linear-gradient(to right,#1137db,#435ecb,#2b3c94);
+   border-radius:5px;
+   /* border:20px solid white; */
+}
+.form-control,.form textarea{
+    color:orange;
+    background-color:#0c1022;
+    font-weight:600;
+    letter-spacing:2px;
+    /* background-color: #ebecf0; */
+    border:2px solid rgb(27, 28, 54);
+    
+    /* margin-bottom: 20px; */
+}
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active,.form textarea:hover{
+    overflow: hidden;
+    color:orange;
+    font-weight:700;
+   border:2px solid rgb(251, 251, 255);
+    background-color:rgba(12, 16, 34,1);
+}
+.form div{
+    margin-bottom:10px;
+    margin-top:5px;
+}

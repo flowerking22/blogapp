@@ -1,0 +1,81 @@
+.orange{
+color:white;
+}
+nav{
+  background-color: #0c1022 !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color:white;
+}
+nav a{
+color:white;
+}
+.nav-link{
+color:white;
+}
+.nav-link:hover{
+color:white;
+}
+nav a:hover{
+  letter-spacing: 3px;
+  color:white;
+}
+.navbar-brand{
+  font-size:medium;
+  margin-left:50px;
+  padding:10px;
+  letter-spacing:5px;
+}
+.navbar-brand:hover{
+letter-spacing:7px;
+}
+.host{
+color:orange!important;
+}
+.navbar-toggler{
+background-color:white;
+color:blue;
+}
+.navbar-toggler-icon{
+color:blue;
+}
+
+/* 
+nav{
+    background-color: #1f1ed2 !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color:white;
+}
+nav a{
+  color:white;
+}
+.nav-link{
+  color:white;
+}
+.nav-link:hover{
+  color:white;
+}
+nav a:hover{
+    letter-spacing: 3px;
+    color:white;
+}
+.navbar-brand{
+    font-size:medium;
+    margin-left:50px;
+    padding:10px;
+    letter-spacing:5px;
+}
+.navbar-brand:hover{
+  letter-spacing:7px;
+}
+.host{
+  color:orange!important;
+}
+.navbar-toggler{
+  background-color:white;
+  color:blue;
+}
+.navbar-toggler-icon{
+  color:blue;
+} */

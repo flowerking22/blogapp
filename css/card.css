@@ -1,0 +1,70 @@
+.author{
+    float:right;
+}
+a{
+    text-decoration:none;
+}
+.card-img-top{
+min-width:30%;
+  object-fit:cover;
+  border-radius:6px 7px 10px 7px !important;
+
+} 
+.row,.card{
+  background-color:#0c1022;
+}
+.card-body{
+ color:rgba(255, 255, 255,0.7);
+  border-radius:1% 30% 0% 20%;
+}
+.card-title{
+  color:white;
+  margin-top:10px;
+  margin-bottom:-20px;
+  text-transform:capitalize;
+  cursor:progress;
+  letter-spacing: 2px;
+  padding:10px;
+}
+.card-title:hover{
+
+    color:rgb(35, 12, 241);
+    letter-spacing:1px;
+    background-color: white;
+}
+.date{
+  color:rgba(228, 255, 20,0.7);
+}
+.onwer{
+    color:rgba(228, 255, 20,0.9);
+}
+.fa-user-circle{
+    color:blue;
+}
+.btn{
+  color:white !important;
+  letter-spacing:2px;
+  font-weight:400;
+
+}
+img{
+  height:40vh;
+  object-fit:cover;
+
+}
+.card{
+  border-radius:10% !important;
+}
+.btn:hover{
+  letter-spacing:2px;
+  font-weight:600;
+}
+.card-title:hover{
+  letter-spacing:5px;
+cursor:pointer;
+border:2px 2px solid blue;
+  border-radius:50px;
+}
+.technology{
+  height:20px !important;
+}

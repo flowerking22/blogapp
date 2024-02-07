@@ -1,0 +1,18 @@
+.navbar{
+font-size: 15px;
+font-weight: 600;
+padding:10px;
+letter-spacing: 2px;
+font-family:Georgia, 'Times New Roman';
+}
+.navbar-brand{
+    margin-left:50px;
+    letter-spacing: 5px;
+}
+.navbar:hover{
+    color:white !important;
+letter-spacing: 3px;
+}
+a:hover{
+    color:white;
+}

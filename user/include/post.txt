@@ -1,0 +1,1 @@
+UPDATE posts SET title='kkj',technology='Business Blogs',content='jjkjk',banner='image21-1.jpg' WHERE post_id='107' AND email='11@ssd.com'
