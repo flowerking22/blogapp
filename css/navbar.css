@@ -13,22 +13,13 @@ nav a{
 .nav-link:hover{
   color:white;
 }
-nav a:hover{
-    letter-spacing: 3px;
-    color:white;
-}
 .navbar-brand{
     font-size:medium;
     margin-left:50px;
     padding:10px;
     letter-spacing:5px;
 }
-.navbar-brand:hover{
-  letter-spacing:7px;
-}
-.host{
-  color:orange!important;
-}
+
 .navbar-toggler{
   background-color:white;
   color:blue;

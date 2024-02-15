@@ -1,0 +1,69 @@
+body{
+    background-color: rgba(96, 122, 209, 0.8);
+    background:linear-gradient(to right,#334596,#7e8291,#3e4f9c);
+    background:linear-gradient(to right,#8d96bd,#1b41da,#aeb3c4);
+      /*
+    background:linear-gradient(to right,#183bd9,rgb(80 80 195),#3051cd);
+    background-color:#586fc9;
+    background:linear-gradient(to right,#586fc9,#586fc9,#586fc9);
+    color:orange;
+    */
+}
+input::placeholder{
+    color:white;
+}
+.form{
+   padding:1rem 2rem 1rem 2rem;
+   color:#ffffff;
+   letter-spacing: 2px;
+
+   /* background-color: rgba(12, 16, 34,0.8); */
+   /*background:linear-gradient(to right,rgb(98, 66, 189),rgb(226, 23, 135),blue);
+   background:linear-gradient(to right,#9ba0b6,rgb(48, 48, 161),#848897);
+   background:linear-gradient(to right,#183bd9,rgb(80 80 195),#3051cd);*/
+   /* background:linear-gradient(to right,#183bd9,#0c1022,#3051cd);
+   background:linear-gradient(to right,#1636c7,#2d3f8d,#534d4d); */
+   background:linear-gradient(to right,#1c3abe,#d3d5dd,#2b3c94);
+   background:linear-gradient(to right,#1137db,#435ecb,#2b3c94);
+   border-radius:5px;
+   /* border:20px solid white; */
+}
+.form input,.form textarea{
+    color:orange;
+    background-color:#0c1022;
+    font-weight:600;
+    letter-spacing:2px;
+    /* background-color: #ebecf0; */
+    border:0px;
+    border-bottom:2px solid blue;
+    /* margin-bottom: 20px; */
+}
+.form-control:active,
+.form-control:focus,
+.form-control:focus:active,
+.form input:hover,.form textarea:hover{
+    overflow: hidden;
+    color:orange;
+    font-weight:700;
+    border:1px solid rgb(252, 252, 255);
+    background-color:rgba(12, 16, 34,1);
+}
+.form div{
+    margin-bottom:10px;
+    margin-top:5px;
+}
+.form {
+    border: 2px solid transparent; /* Set an initial transparent border */
+    /*
+    animation: rotateBorder 2s linear infinite;
+    */
+}
+
+@keyframes rotateBorder {
+    
+    0% { border-color:#ffffff;}
+    25% { border-color: rgb(238, 234, 226); }
+    50% { border-color: rgb(16, 83, 160); }
+    75% { border-color: rgb(247, 232, 22); }
+    100% { border-color: rgb(240, 83, 36); }
+}

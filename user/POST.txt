@@ -1,1 +1,0 @@
-UPDATE POSTs SET title='njin9ijn',technology='Food Blog',content='            jooikkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',banner='love.jpg' WHERE POST_id='115' AND email='Poovu@gmail.com'

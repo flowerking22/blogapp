@@ -1,14 +1,10 @@
-<style>
-
-</style>
-<link rel="stylesheet" href="css/card.css" />
+<link rel="stylesheet" href="css/card copy.css" />
 <div class="row  g-4 py-5">
-    <?php 
-
+<?php
 $sql="SELECT u.name as 'onwer' ,p.title as 'title',p.banner as 'banner',p.technology as 'technology' ,
 p.post_id as id ,/*p.content as 'content',*/p.post_at as 'data' from users u join posts p on u.email=p.email
+where p.technology like '%$tech'
 order by p.title";
-
 $result=$con->query($sql);
 if (($con->error)) {
   ?><script>
@@ -22,8 +18,6 @@ if (($con->error)) {
   while ($row = $result->fetch_assoc()) {
 
 ?>
-
-
     <div class="col-12 col-sm-6 col-md-4 mb-4 card">
         <div class="m-2">
             <div class=" d-flex justify-content-end">
@@ -36,12 +30,15 @@ if (($con->error)) {
             <img src="./uploads/<?=$row['banner']?>" class="card-img-top image rounded"
                 alt="./uploads/<?=$row['banner']?>">
 
-            <div class=" justify-content-center">
+            <div class=" d-flex justify-content-center">
 
-                <a href='detail.php?id=<?=$row['id']?>'>
-                    <h3 class=" d-flex justify-content-center">
-                        <i class="card-title"><?=$row['title']?></i>
-                    </h3>
+                <a href='detail.php?id=<?=$row['id']?>' target="_blank">
+                    <h4 class=" d-flex justify-content-center">
+                      <span class="card-title">
+                        <i class=""><?=$row['title']?></i>
+                        <i class="card-title-open fa fa-external-link"></i>
+  </span>
+                    </h4>
                 </a>
 
             </div>

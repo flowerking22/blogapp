@@ -1,21 +1,21 @@
 <?php
+include_once('config/auth.php');
 include('include/header.php');
 ?>
 <?php
- $err_msg='';
- 
- $name = '';
- $email='';
- $password='';
- $phone='';
+$err_msg='';
+$name = '';
+//  $email='';
+$password='';
+$phone='';
  
 if (isset($_POST["submit"])) {
     // echo "<script>
     // alert('Post Open');</script>";
   // Process the form data here
-  $err_msg='';
+  
   $name = trim($_POST['name']);
-  $email= strtolower(trim($_POST['email']));
+  // $email= strlower(trim($_POST['email']));
   $password=trim($_POST['password']);
   $phone=trim($_POST['phone']);
   do{
@@ -61,7 +61,7 @@ if (isset($_POST["submit"])) {
        break;
       }
       //email
-      if(empty($email)){
+      /*if(empty($email)){
         $err_msg="Email shold not be empty";
         break;
       }
@@ -79,7 +79,7 @@ if (isset($_POST["submit"])) {
       //   $err_msg="Invalid email format. ";
       //  break;
       // }
-
+*/
 
       //phone
       if(empty($phone)){
@@ -96,10 +96,11 @@ if (isset($_POST["submit"])) {
         $err_msg= "phone number is not valid";
        break;
       }
-  $sql="insert into users(name,email,password,phone) values('$name','$email','$password','$phone')";
+  $sql="UPDATE users SET name='$name',password='$password',phone='$phone' 
+  WHERE email='".$_SESSION['email']."'";
   $con->query($sql);
   if (!($con->error)) {
-    session_start();
+    unset($_SESSION['email']);
     //$_SESSION['email']=$email;
     echo "<script>
     alert('New Record Created Successfully');</script>";
@@ -122,7 +123,7 @@ if (isset($_POST["submit"])) {
       width: 450px;
       height:700px;
       max-width: 500px;
-     max-height:600px;
+      max-height:500px;
       background: #040717;
       border-radius: 50px 5px;
       display: flex;
@@ -132,7 +133,6 @@ if (isset($_POST["submit"])) {
       margin-top: 70px;
   }
   </style>
-<title>User Registration Form</title>
 <form action="" method="POST">
 
     <div class="login_form_container">
@@ -145,7 +145,7 @@ if (isset($_POST["submit"])) {
             </div>
             <?php
           }?>
-            <h3 class="text-center">User Registeration</h3>
+            <h3 class="text-center">User Update </h3>
             <div class="input_group">
                 <i class="fa fa-user"></i>
                 <!--name=" "--><input type="text" name="name" value="<?=$name?>" 
@@ -158,12 +158,12 @@ if (isset($_POST["submit"])) {
                     placeholder="Password ..." class="input_text"  />
                 <i class="fa fa-eye" id="togglePassword"></i>
             </div>
-            <div class="input_group">
+            <!-- <div class="input_group">
                 <i class="fa fa-envelope"></i>
                 <input type="email" name="email" placeholder="Email ..." 
-                value="<?=$email?>" required class="input_text"
+                value="<=$email?>" required class="input_text"
                    />
-            </div>
+            </div> -->
             <div class="input_group">
                 <i class="fa fa-phone"></i>
                 <input type="tel" name="phone" placeholder="Phone no..." value="<?=$phone?>" class="input_text"
@@ -171,11 +171,11 @@ if (isset($_POST["submit"])) {
             </div>
             <div class="button_group" id="login_button">
                 <button type="submit" name="submit" class="input_text submit" autocomplete="off"><i
-                        class="fa fa-user-plus"></i>Sign Up</button>
+                        class="fa fa-edit"></i> Update</button>
 
             </div>
             <div class="fotter">
-                <a href='login.php' class="nextpage">Aleardy Registerd</a>
+                <a href='./' class="nextpage">Not now</a>
             </div>
 
         </div>

@@ -1,36 +1,66 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.author{
+    float:right;
 }
-body{
-        background-color: #f9f6f2;
+a{
+    text-decoration:none;
 }
 .card-img-top{
-    border-radius: 50px !important;
-    padding: 20px;
-}
-.onwer{
-font-weight: 600 !important;
-font-family: Helvetica;
-}
-.card{
-    border-radius: 30px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-    border:2px black;
+min-width:30%;
+  object-fit:cover;
+  border-radius:6px 7px 10px 7px !important;
+
+} 
+.row,.card{
+  background-color:#0c1022;
 }
 .card-body{
-    padding: 25px;
-    margin-top: -15px;
+ color:rgba(255, 255, 255,0.7);
+  border-radius:1% 30% 0% 20%;
 }
-.btn-primary{
-    border-radius: 50px;
-    width: 120px;
+.card-title{
+  color:white;
+  margin-top:10px;
+  margin-bottom:-20px;
+  text-transform:capitalize;
+  cursor:progress;
+  letter-spacing: 2px;
+  padding:10px;
 }
-.btn-primary:hover{
-    background-color: black;
-    border: none;
+.card-title-open{
+    color:#cf9312;
+    cursor:pointer;
+    /* background-color: white; */
+    /* border-radius: 15px;
+    background: linear-gradient(to right,#000000,#181818,#5151a9); */
 }
-h3,h5{
-    color: rgb(0, 91, 228);
+.date{
+  color:rgba(228, 255, 20,0.7);
+}
+.onwer{
+    color:rgba(228, 255, 20,0.9);
+}
+.fa-user-circle{
+    color:blue;
+}
+.btn{
+  color:white !important;
+  letter-spacing:2px;
+  font-weight:400;
+
+}
+img{
+  height:40vh;
+  object-fit:cover;
+
+}
+.card{
+  border-radius:10% !important;
+}
+.btn:hover{
+  letter-spacing:2px;
+  font-weight:600;
+}
+
+.technology{
+  height:20px !important;
 }

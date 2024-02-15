@@ -26,10 +26,8 @@ min-width:30%;
   letter-spacing: 2px;
   padding:10px;
 }
-.card-title:hover{
-
+.card-title-open:hover{
     color:rgb(35, 12, 241);
-    letter-spacing:1px;
     background-color: white;
 }
 .date{
@@ -59,12 +57,7 @@ img{
   letter-spacing:2px;
   font-weight:600;
 }
-.card-title:hover{
-  letter-spacing:5px;
-cursor:pointer;
-border:2px 2px solid blue;
-  border-radius:50px;
-}
+
 .technology{
   height:20px !important;
 }

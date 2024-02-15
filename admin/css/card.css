@@ -1,0 +1,76 @@
+
+.author{
+    float:right;
+}
+a{
+    text-decoration:none;
+}
+.card-img-top{
+min-width:30%;
+  object-fit:cover;
+  /* border-radius:10px 20px 30px 40px !important;
+  */
+} 
+.btn{
+  color:white !important;
+  letter-spacing:2px;
+  font-weight:400;
+
+}
+.btn:hover{
+  letter-spacing:2px;
+  font-weight:600;
+}
+.card-title{
+  letter-spacing:3px;
+  font-size:large;
+  font-weight:900;
+  color:blue;
+  text-transform:capitalize;
+  
+  border-radius:0;
+    
+    
+
+}
+.card-title:hover{
+  letter-spacing:5px;
+cursor:pointer;
+  border-radius:50px;
+}
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+        background-color: #f9f6f2;
+}
+.card-img-top{
+    border-radius: 50px !important;
+    padding: 20px;
+}
+.onwer{
+font-weight: 600 !important;
+font-family: Helvetica;
+}
+.card{
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    border:2px black;
+}
+.card-body{
+    padding: 25px;
+    margin-top: -15px;
+}
+.btn-primary{
+    border-radius: 50px;
+    width: 120px;
+}
+.btn-primary:hover{
+    background-color: black;
+    border: none;
+}
+h3,h5{
+    color: rgb(0, 91, 228);
+} */

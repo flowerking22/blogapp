@@ -4,17 +4,15 @@
   font-family: 'Font Awesome 4.7';
   content: '\f0c9';
 }
-a{
-text-decoration:none;
-}
+
 </style>
 <link rel="stylesheet" href="css/navbar.css"/>
 <?php
-    $email= $_SESSION['email'];
-  $sql="SELECT * FROM users WHERE email='$email'";
-  $result=$con->query($sql);
-  $result=$result->fetch_assoc();
-  $sql="SELECT count(*) as 'count' FROM posts WHERE email='$email'";
+  $admin= $_SESSION['admin'];
+  // $sql="SELECT * FROM users WHERE email='$email'";
+  // $result=$con->query($sql);
+  // $result=$result->fetch_assoc();
+  $sql="SELECT count(*) as 'count' FROM posts";
   $res=$con->query($sql);
   $res=$res->fetch_assoc();
 if (($con->error)) { 
@@ -40,7 +38,7 @@ if (($con->error)) {
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
       
       <li class="nav-item">
-          <a class="nav-link active  " aria-current="page" href="register.php">New User</a>
+          <a class="nav-link active  " aria-current="page" href="user.php">Manage Users</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="../" tabindex="-1" aria-disabled="true">Back as Guest</a>
@@ -66,11 +64,10 @@ if (($con->error)) {
       <form class="d-flex">
        <ul class="navbar-nav mr-2 mb-2 mb-lg-0 ">
        <li class="nav-item">
-          <span class="nav-link active host "  aria-current="page">User Panel <a href="update_user.php" class="fa fa-edit"></a></span>
-         
+          <a class="nav-link active host " href="user" aria-current="page">Admin Panel</a>
         </li>
        <li class="nav-item">
-          <a class="nav-link active" aria-current="page">H'i&nbsp<i class="host"><?=$result['name']?></i></a>
+          <a class="nav-link active" aria-current="page">H'i&nbsp<i class="host"><?=$admin?></i></a>
         </li>
        <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="">H'i<?//=$result['name']?></a>
@@ -85,11 +82,9 @@ if (($con->error)) {
 
   </a>
           </li>
-        <li class="nav-item">
-          <a class="nav-link" href="create.php">Add New Blog</a>
-        </li>
-       
-    
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="1create.php">Add New Blog</a>
+        </li> -->
       </ul>
       </form>
     </div>

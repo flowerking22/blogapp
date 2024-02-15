@@ -3,68 +3,70 @@ require_once('include/header.php');
 ?>
 <?php
 $err_msg='';
-$email='';
+$username='';
 $password='';
 if (isset($_POST["submit"])) {
     // echo "<script>
     // alert('Post Open');</script>";
   // Process the form data here
   
-  $email= $_POST['email'];
-  $password=$_POST['password'];
+  $username=trim($_POST['username']);
+  $password=trim($_POST['password']);
   
   do{
-    if(empty($email)){
-      $err_msg="Email shold not be empty";
+    if(empty($username)){
+      $err_msg="username shold not be empty";
       break;
     }
-      $minLength = 6;
-      $smallLetterPattern = "/[a-z]/";
-      $capitalLetterPattern = "/[A-Z]/";
-      $specialCharPattern = "/[^a-zA-Z0-9]/";
-      // Define patterns for different character types
-      if (strlen($password) < $minLength) {
-        $err_msg= "Password must be at least $minLength characters long. ";
-       break;
-      }
-    
-      // Check for at least one small letter
-      if (!preg_match($smallLetterPattern, $password)) {
-        $err_msg= "Password must contain at least one lowercase letter. ";
-       break;
-      }
-    
-      // Check for at least one capital letter
-      if (!preg_match($capitalLetterPattern, $password)) {
-        $err_msg= "Password must contain at least one uppercase letter. ";
-       break;
-      }
-    
-      // Check for at least one special character
-      if (!preg_match($specialCharPattern, $password)) {
-        $err_msg= "Password must contain at least one special character. ";
-       break;
-      }
-      //email
-      $minLength = 6;
-
-      
-      $emailPattern = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/";
-      $pattern = "/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/";
-      // Check text length
-      if (strlen($email) < $minLength) {
-       $err_msg= "email must be at least $minLength chars long. ";
+    if(empty($password)){
+      $err_msg="password shold not be empty";
       break;
-      }
-      if(empty($password)){
-        $err_msg="password shold not be empty";
-        break;
-      }
-      // if(!preg_match ($pattern, $email)) {
-      //   $err_msg="Invalid email format. ";
+    }
+      // $minLength = 6;
+      // $smallLetterPattern = "/[a-z]/";
+      // $capitalLetterPattern = "/[A-Z]/";
+      // $specialCharPattern = "/[^a-zA-Z0-9]/";
+      // // Define patterns for different character types
+      // if (strlen($password) < $minLength) {
+      //   $err_msg= "Password must be at least $minLength characters long. ";
       //  break;
       // }
-  $sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
+    
+      // // Check for at least one small letter
+      // if (!preg_match($smallLetterPattern, $password)) {
+      //   $err_msg= "Password must contain at least one lowercase letter. ";
+      //  break;
+      // }
+    
+      // // Check for at least one capital letter
+      // if (!preg_match($capitalLetterPattern, $password)) {
+      //   $err_msg= "Password must contain at least one uppercase letter. ";
+      //  break;
+      // }
+    
+      // // Check for at least one special character
+      // if (!preg_match($specialCharPattern, $password)) {
+      //   $err_msg= "Password must contain at least one special character. ";
+      //  break;
+      // }
+      // //username
+      // $minLength = 6;
+
+    
+      // // Check text length
+      // if (strlen($username) < $minLength) {
+      //  $err_msg= "username must be at least $minLength chars long. ";
+      // break;
+      // }
+      // if(empty($password)){
+      //   $err_msg="password shold not be empty";
+      //   break;
+      // }
+      // if(!preg_match ($pattern, $username)) {
+      //   $err_msg="Invalid username format. ";
+      //  break;
+      // }
+  $sql="SELECT * FROM admin WHERE username='$username' AND password='$password'";
   $result=$con->query($sql);
 if (!($con->error)) {
     $count = mysqli_num_rows($result);
@@ -73,19 +75,18 @@ if (!($con->error)) {
             echo "<script>
             alert('Login Successfully');</script>";
                 session_start();
-                $_SESSION['email']=$row['email'];
-                $_SESSION['name']=$row['name'];
+                $_SESSION['admin']=$row['username'];
          header('Location:./');
           }
     }
     else{
-      $err_msg="Email or Passsword worng";
+      $err_msg="username or Passsword worng";
       
-$email='';
-$password='';
+// $username='';
+// $password='';
 
         echo "<script>
-        alert('Your Email or Password was incorrect');</script>";
+        alert('Your username or Password was incorrect');</script>";
     }
    
     //header('Location: ./login.php');
@@ -117,7 +118,7 @@ window.onload = function() {
       width: 450px;
       
       max-width: 400px;
-      max-height: 500px;
+      max-height:500px;
       background: #040717;
       border-radius: 50px 5px;
       display: flex;
@@ -134,22 +135,18 @@ window.onload = function() {
 <form action="" method="POST" onsubmit="return validate">
     <div class="login_form_container">
         <div class="login_form">
-            <h3 class="text-center">Login</h3>
-        
+            <h3 class="text-center">Admin Login</h3>
             <?php if(strlen($err_msg)>1)
-          { ?> 
+          { ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong><?=$err_msg?></strong>
+                <strong><?=$err_msg?></strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-               <?php
+            </div>
+            <?php
           }?>
-          
-
-          
             <div class="input_group">
                 <i class="fa fa-user"></i>
-                <input type="text" placeholder="Email ..." name="email" value="<?=$email?>" class="input_text"
+                <input type="text" placeholder="username ..." name="username" value="<?=$username?>" class="input_text"
                     autocomplete="off" />
             </div>
             <div class="input_group">
@@ -166,7 +163,7 @@ window.onload = function() {
             </div>
             <div class="fotter">
                 <!-- <a>Forgot Password ?</a> -->
-                <a href="./register.php" class="nextpage">New User</a>
+                <a href="./register.php" class="nextpage">Create Admin</a>
             </div>
         </div>
     </div>

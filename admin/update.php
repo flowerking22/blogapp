@@ -1,7 +1,9 @@
 <?php
 include_once('config/auth.php');
 require_once('include/header.php');
+
 ?>
+<link rel="stylesheet" href="css/update.css" />
 <script src="js/changetypepass.js"></script>
 <script src="js/form.js"></script>
 <?php
@@ -10,8 +12,7 @@ if(!isset($_REQUEST['id'])){
   header("Location:./");
 }
     $id=$_REQUEST['id'];
- $email=$_SESSION['email'];
- $sql="SELECT * FROM posts WHERE email='$email' AND post_id='$id'";
+ $sql="SELECT * FROM posts WHERE post_id='$id'";
  $result=$con->query($sql);
  $row = $result->fetch_assoc();
     $title=$row['title'];
@@ -19,20 +20,21 @@ if(!isset($_REQUEST['id'])){
     $content=$row['content'];
     $banner=$row['banner'];
     ?>
+
 <?php
 if (isset($_POST["submit"])) {
+ 
     do{
-      $email=$_SESSION['email'];
       $title=ucwords(trim($_POST['title']));
-      $id=$_POST['id'];
+      // $id=$_POST['id'];
       $technology=ucwords(trim($_POST['technology']));
       $content=trim($_POST['content']);
       $filechanged=$_POST['filechanged'];
       $fileflag=($filechanged=="true")?true:false;
-    if($fileflag){
-      $image = $_FILES['banner'];
-      $banner=$image['name'];
-    }
+      if($fileflag){
+        $image = $_FILES['banner'];
+        $banner=$image['name'];
+      }
       if(empty($title)){
         $err_msg="title shold not be empty";
         break;
@@ -92,15 +94,14 @@ alert('Uploaded image file extension is not allowed.');
   /*$sql="INSERT INTO posts(email,title,technology,banner,content) VALUES('$email','$title','$technology','$image["name"]','$content')";
   */
   $content=htmlspecialchars($content,ENT_QUOTES);
-  $sql="UPDATE POSTs SET title='$title',technology='$technology',content='$content',banner='$banner' WHERE POST_id='$id' AND email='$email'";
+  $sql="UPDATE POSTs SET title='$title',technology='$technology',content='$content',banner='$banner' WHERE POST_id='$id'";
   $con->query($sql);
 //   fwrite($myFile,$sql);
 }
 else{
   $content=htmlspecialchars($content,ENT_QUOTES);
-  $sql="UPDATE POSTs SET title='$title',technology='$technology',content='$content' WHERE POST_id='$id' AND email='$email'";
+  $sql="UPDATE POSTs SET title='$title',technology='$technology',content='$content' WHERE POST_id='$id'";
   $con->query($sql);
-  
 }
 if ($con->error) { 
   $err_msg=$con->error;
@@ -123,15 +124,13 @@ alert("Blog Updated Successfully");
   
 ?>
 
-<link rel="stylesheet" href="css/update.css" />
+<link rel="stylesheet" href="form.css">
 <script src="js/add_post.js"></script>
-
 <div class="container">
-
+    <!-- <h1 class="text-center">Responsive Form</h1> -->
     <div class="row justify-content-center">
-        <form class=" form col-9 col-md-6" method="POST" enctype="multipart/form-data" action="" id="update_form">
-        <h3 class="text-center text-white">Update Blog</h3>
-        <?php if(strlen($err_msg)>1)
+        <form class=" form col-9 col-md-6" method="POST" enctype="multipart/form-data" action="">
+            <?php if(strlen($err_msg)>1)
           { ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 <strong><?=$err_msg?></strong>
@@ -140,8 +139,7 @@ alert("Blog Updated Successfully");
             <?php
           }?>
             <div class=" ">
-                <input type="hidden" name="id" value=<?=$id?>/>
-                <!-- <input type="text" name="filechanged" id="filechanged"/> -->
+                <input type="hidden" name="id" value=<?=$id?> />
                 <input type="text"   id="filechanged" value="false" name="filechanged" hidden>
                 <label for="textInput" class="form-label">Title</label>
                 <input type="text" class="form-control" autocomplete="off" id="name" value="<?=$title?>" name="title"
@@ -184,6 +182,4 @@ banner_file.addEventListener('change',function(){
     document.getElementById('filechanged').value="true";
 });
   </script>
-
-<!--<script src="js/change_banner.js"></script>
-<script src="js/update.js"></script> -->
+<!-- <script src="js/change_banner.js"></script> -->

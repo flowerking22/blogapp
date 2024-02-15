@@ -13,9 +13,9 @@ if (isset($_POST["submit"])) {
  
   do{
     $email=$_SESSION['email'];
-    $title=$_POST['title'];
-    $technology=$_POST['technology'];
-    $content=$_POST['content'];
+    $title=ucwords(trim($_POST['title']));
+    $technology=ucwords(trim($_POST['technology']));
+    $content=trim($_POST['content']);
     $image = $_FILES['banner'];
     $banner=$image['name'];
     
@@ -104,6 +104,7 @@ $content=htmlspecialchars($content,ENT_QUOTES);
     <!-- <h1 class="text-center">Responsive Form</h1> -->
     <div class="row justify-content-center">
         <form class=" form col-9 col-md-6" method="POST" enctype="multipart/form-data" action="" >
+        <h3 class="text-center text-white">Add Blog</h3>
         <?php if(strlen($err_msg)>1)
           { ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
